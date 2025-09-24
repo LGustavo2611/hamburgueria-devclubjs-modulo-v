@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #8E0E00;
+    background: linear-gradient(-45deg, #8E0E00, #1F1C18, #8E0E00, #1F1C18);
+    background-size: 400% 400%;
+    animation: flames 12s ease infinite;
+    height: 95vh;
+}
+
+@keyframes flames {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container-buttons {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    background: linear-gradient(to bottom, #f5c117, #F56217);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 120px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.7s ease;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+button:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+ul {
+    list-style: none;
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+li {
+    background: linear-gradient(135deg, #1a1a1a, #292929);
+    border: 2px solid #f5c117;
+    box-shadow: 0px 4px 15px rgba(255, 140, 0, 0.4);
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+    border: 2px solid #F56217;
+    box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    height: 180px;
+    /* altura fixa para padronizar */
+    object-fit: cover;
+    /* corta o excesso mantendo o foco da imagem */
+    border-radius: 10px;
+}
+
+p {
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #F56217;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.item-price:hover {
+    color: #f5c117;
+    text-shadow: 0 0 6px #ff1900;
+}
+
+.card-total {
+    max-width: 400px;
+    /* largura limitada */
+    margin: 0 auto;
+    /* centraliza */
+    text-align: center;
+    padding: 20px;
+    background: #1e1e1e;
+    border: 2px solid orange;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+}
+
+.card-total h2 {
+    margin-bottom: 15px;
+    color: #ff8c00;
+    text-shadow: 0 0 5px #ff4500;
+}
+
+.card-total p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+.card-total span {
+    font-weight: bold;
+    color: #f5c117;
+    text-shadow: 0 0 6px #ff1900;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+    ul {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas */
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    ul {
+        grid-template-columns: 1fr;
+        /* 1 coluna */
+    }
+}
